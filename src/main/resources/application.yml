@@ -1,0 +1,24 @@
+server:
+  port: 5555
+spring:
+  application:
+    name: gateway-service
+  profiles:
+    active:
+      default
+  cloud:
+    config:
+      enabled: false
+# Security skip        
+management.security.enabled: false
+
+zuul:
+  prefix:  
+  routes:
+    inventory-service: /inventory/**
+    merchant-service: /merchant/**
+    customer-service: /customer/**
+    admin-service: /admin/**
+    review-service: /review/**
+    auction-service: /auction/**
+    store-service: /store/**
